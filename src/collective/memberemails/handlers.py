@@ -115,7 +115,7 @@ def userRemoveHandler(site, event):
         return
     
     user = acl_users.getUser(event.userid)
-    address = user.getProperty('email')
+    address = user and user.getProperty('email')
     if not address:
         return
         
